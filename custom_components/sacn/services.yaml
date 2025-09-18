@@ -1,0 +1,50 @@
+send_dmx:
+  name: "Send DMX Data"
+  description: "Send DMX data to a specific universe via sACN"
+  fields:
+    universe:
+      name: "Universe"
+      description: "DMX universe number (1-63999)"
+      required: true
+      example: 1
+      selector:
+        number:
+          min: 1
+          max: 63999
+          mode: box
+    channels:
+      name: "Channel Data"
+      description: "Dictionary of channel numbers and values (0-255)"
+      required: true
+      example: {"1": 255, "2": 128, "3": 0}
+      selector:
+        object: {}
+
+send_channel:
+  name: "Send Single Channel"
+  description: "Send a single DMX channel value"
+  fields:
+    universe:
+      name: "Universe"
+      description: "DMX universe number"
+      required: true
+      selector:
+        number:
+          min: 1
+          max: 63999
+    channel:
+      name: "Channel"
+      description: "DMX channel number (1-512)"
+      required: true
+      selector:
+        number:
+          min: 1
+          max: 512
+    value:
+      name: "Value"
+      description: "DMX value (0-255)"
+      required: true
+      selector:
+        number:
+          min: 0
+          max: 255
