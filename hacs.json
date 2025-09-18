@@ -1,0 +1,7 @@
+{
+  "name": "sACN (E1.31) Integration",
+  "hacs": "1.6.0",
+  "domains": ["sacn"],
+  "iot_class": "Local Push",
+  "homeassistant": "2023.1.0"
+}
